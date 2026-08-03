@@ -119,8 +119,7 @@
   .card-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .card-body h3{ margin:0; font-size:16px; font-weight:600; color:var(--product-text); }
   .card-body .descricao{ margin:0; font-size:13px; color:#ffa2c4; }
-  .vagas{ font-size:13px; color:var(--btn-buy-bg); font-weight:600; }
-  .card.reservado .vagas{ color:#ebe8e8; }
+  .vagas{ display:none; }
   .card-actions{ margin-top:auto; display:flex; flex-direction:column; gap:8px; }
   .btn{
     display:inline-block; text-align:center; padding:9px 14px; border-radius:999px;
@@ -458,8 +457,8 @@
 
 <script>
   // ⚠️ TROQUE pela URL do SEU banco de dados Firebase (veja o guia de configuração).
-  // Formato: https://cha-da-maite-66d5b-default-rtdb.firebaseio.com
-  const FIREBASE_URL = "https://cha-da-maite-66d5b-default-rtdb.firebaseio.com";
+  // Formato: https://SEU-PROJETO-default-rtdb.firebaseio.com
+  const FIREBASE_URL = "https://SEU-PROJETO-default-rtdb.firebaseio.com";
 
   async function carregarVagas(){
     const cards = document.querySelectorAll('.card');
