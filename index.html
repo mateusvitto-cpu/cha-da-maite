@@ -466,7 +466,7 @@
       const id = card.dataset.id;
       const qtdTotal = parseInt(card.dataset.qtd, 10);
       try{
-        const res = await fetch(`${FIREBASE_URL}/presentes/${id}.json`);
+        const res = await fetch(`${FIREBASE_URL}/presentes/${id}.json?_=${Date.now()}`, { cache: 'no-store' });
         const data = await res.json();
         const reservados = data ? Object.keys(data).length : 0;
         atualizarUI(card, reservados, qtdTotal);
@@ -511,7 +511,7 @@
       body: JSON.stringify({ data: new Date().toISOString() })
     });
 
-    const res = await fetch(`${FIREBASE_URL}/presentes/${id}.json`);
+    const res = await fetch(`${FIREBASE_URL}/presentes/${id}.json?_=${Date.now()}`, { cache: 'no-store' });
     const data = await res.json();
     const reservados = data ? Object.keys(data).length : 0;
     atualizarUI(card, reservados, qtdTotal);
