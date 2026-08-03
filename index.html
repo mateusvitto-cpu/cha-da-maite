@@ -115,7 +115,7 @@
     transition:transform .15s ease, box-shadow .15s ease;
   }
   .card:hover{ transform:translateY(-3px); box-shadow:0 12px 24px -12px rgba(0,0,0,0.35); }
-  .card.reservado{ opacity:0.65; }
+  .card.Reservar{ opacity:0.65; }
   .card-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .card-body h3{ margin:0; font-size:16px; font-weight:600; color:var(--product-text); }
   .card-body .descricao{ margin:0; font-size:13px; color:#ffa2c4; }
@@ -148,7 +148,7 @@
         <h1>Bem-vindos a lista de presentes da Maitê</h1>
         <p>Com muito amor, preparamos essa listinha de presentes. Cada mimo vem cheio de amor e carinho! 💖</p>
         <div class="note">
-          <strong>Como funciona:</strong> clique em "Reservado" no presente que irá comprar. Ele não vai registrar seu nome, mas é para que os demais convidados não comprem presentes repetidos, assim tendo mais diversidade de presentes para nossa Maitê.
+          <strong>Como funciona:</strong> clique em "Reservar" no presente que irá comprar. Ele não vai registrar seu nome, mas é para que os demais convidados não comprem presentes repetidos, assim tendo mais diversidade de presentes para nossa Maitê.
         </div>
       </div>
     </div>
@@ -362,7 +362,7 @@
           </div>
         </div>
 
-        <div class="card" data-id="26" data-qtd="2">
+        <div class="card" data-id="26" data-qtd="1">
           <div class="card-body">
             <h3>Escova e pente para cabelo</h3>
             <div class="vagas" data-vagas>Carregando...</div>
@@ -372,7 +372,7 @@
           </div>
         </div>
 
-        <div class="card" data-id="27" data-qtd="2">
+        <div class="card" data-id="27" data-qtd="1">
           <div class="card-body">
             <h3>Termômetro</h3>
             <div class="vagas" data-vagas>Carregando...</div>
@@ -411,7 +411,7 @@
       <div class="category-box">
         <div class="grid">
 
-        <div class="card" data-id="30" data-qtd="2">
+        <div class="card" data-id="30" data-qtd="1">
           <div class="card-body">
             <h3>Kit mamadeiras</h3>
             <p class="descricao">Anti-cólica (preferencialmente AVENT PHILIPS - ROSA)</p>
@@ -482,17 +482,17 @@
     const btn = card.querySelector('.btn-check');
     if (restantes <= 0){
       vagasEl.textContent = 'Todas as unidades já foram reservadas 🎁';
-      card.classList.add('reservado');
+      card.classList.add('Reservar');
       btn.disabled = true;
       btn.textContent = 'Esgotado';
     } else {
       vagasEl.textContent = qtdTotal > 1
         ? `${restantes} de ${qtdTotal} disponíveis`
         : 'Disponível';
-      card.classList.remove('reservado');
+      card.classList.remove('Reservar');
       btn.disabled = false;
       btn.classList.remove('on');
-      btn.textContent = 'Reservado';
+      btn.textContent = 'Reservar';
     }
   }
 
